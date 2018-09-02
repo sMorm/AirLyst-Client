@@ -1,13 +1,13 @@
-import ApolloClient from "apollo-boost";
+import ApolloClient from 'apollo-boost';
 
-const uri = "http://localhost:4000";
+const uri = 'http://localhost:4000';
 const request = async operation => {
-  const token = localStorage.getItem("jwt");
+  const token = localStorage.getItem('jwt');
   operation.setContext({
     headers: {
-      authorization: token ? `Bearer ${token}` : ""
+      authorization: token ? `Bearer ${token}` : ''
     }
   });
 };
 
-export default new ApolloClient({ uri, request });
+export default new ApolloClient({uri, request});

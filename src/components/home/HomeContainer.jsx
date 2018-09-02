@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import Authentication from '../../authContext';
-import client from '../../shared/utils/apollo'
-import gql from 'graphql-tag';
 
 class HomeContainer extends Component {
   render() {
@@ -9,14 +7,14 @@ class HomeContainer extends Component {
       <Authentication.Consumer>
         {({user}) => {
           if (user) {
-            return <div>Hello {user.firstName}</div>
+            return <div>Hello {user.firstName}</div>;
           } else {
-            return <div>Not Logged In</div>
+            return <div>Not Logged In</div>;
           }
         }}
       </Authentication.Consumer>
     );
   }
-};
+}
 
 export default HomeContainer;
