@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export default class Input extends Component {
   static propTypes = {
@@ -9,7 +9,7 @@ export default class Input extends Component {
     className: PropTypes.string,
     type: PropTypes.string,
     placeholder: PropTypes.string
-  }
+  };
 
   static defaultProps = {
     style: {},
@@ -17,16 +17,15 @@ export default class Input extends Component {
     className: '',
     placeholder: '',
     type: 'text'
-  }
+  };
 
   render() {
     return (
-      <input
-        {...this.props}
-        onChange={e => this.props.onChange(e)}
-      >
-        {this.props.children}
-      </input>
-    )
+      <div>
+        <input {...this.props} onChange={e => this.props.onChange(e)}>
+          {this.props.children}
+        </input>
+      </div>
+    );
   }
 }

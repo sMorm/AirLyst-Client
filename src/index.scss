@@ -1,5 +1,33 @@
+// temp
+$primary-color: navy;
+
 body {
+  font-family: 'Circular-Pro-Book', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  overflow: auto;
+  background: #FFF1EE;
+}
+
+h1, p, input, button {
+  font-family: 'Circular-Pro-Bold', sans-serif !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.hide {
+  display: none;
+}
+
+.fullWidth {
+  width: 100%;
 }

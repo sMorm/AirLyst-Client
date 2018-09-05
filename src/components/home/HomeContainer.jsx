@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
 import Authentication from '../../authContext';
+import GuestHome from './GuestHome';
+import LoggedInHome from './LoggedInHome';
 
 class HomeContainer extends Component {
   render() {
     return (
       <Authentication.Consumer>
-        {({user}) => {
-          if (user) {
-            return <div>Hello {user.firstName}</div>;
-          } else {
-            return <div>Not Logged In</div>;
-          }
-        }}
+        {({user}) => (user ? <LoggedInHome user={user} /> : <GuestHome />)}
       </Authentication.Consumer>
     );
   }

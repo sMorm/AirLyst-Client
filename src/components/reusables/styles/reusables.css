@@ -22,3 +22,13 @@ a {
 
 .fullWidth {
   width: 100%; }
+
+.Button-reusable {
+  background: navy;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 5px; }
+  .Button-reusable-full {
+    width: 100%; }

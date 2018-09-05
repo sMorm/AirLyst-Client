@@ -1,0 +1,13 @@
+@import '../../../index.scss';
+
+.Button-reusable {
+  background: $primary-color;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 5px;
+  &-full {
+    width: 100%;
+  }
+}

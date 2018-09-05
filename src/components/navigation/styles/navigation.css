@@ -1,0 +1,20 @@
+.Navigation {
+  width: 100%;
+  background: white;
+  height: 50px; }
+  .Navigation-content {
+    width: 90%;
+    height: 95%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .Navigation-right-content {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    min-width: 120px;
+    max-width: 140px; }
+  .Navigation-logo {
+    letter-spacing: 1px; }

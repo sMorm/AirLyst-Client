@@ -8,6 +8,8 @@ import Button from '../reusables/Button';
 import {Mutation} from 'react-apollo';
 import {SIGNUP_MUTATION} from './queries/signup';
 
+const noop = () => {};
+
 export default class Signup extends Component {
   static propTypes = {
     user: PropTypes.object
@@ -35,8 +37,7 @@ export default class Signup extends Component {
       lastName,
       username,
       email,
-      password,
-      confirmPassword
+      password
     } = this.state;
     console.log(signup);
     console.log(this.state);
@@ -47,55 +48,65 @@ export default class Signup extends Component {
     return (
       <Mutation mutation={SIGNUP_MUTATION}>
         {(signup, {loading, error, data}) => {
-          if(error) {
+          if (error) {
+            console.log(error);
             console.log(error.graphQLErrors.find(f => f));
           }
+          if (data) {
+            return <p>Email Confirmation Sent</p>
+          }
           return (
-          <form onSubmit={e => this.onSubmit(e, signup)}>
-            <Input
-              value={this.state.firstName}
-              onChange={this.onChange}
-              name="firstName"
-              placeholder="First Name"
-            />
-            <Input
-              value={this.state.lastName}
-              onChange={this.onChange}
-              name="lastName"
-              placeholder="Last Name"
-            />
-            <Input
-              value={this.state.username}
-              onChange={this.onChange}
-              name="username"
-              placeholder="Username"
-            />
-            <Input
-              value={this.state.email}
-              onChange={this.onChange}
-              name="email"
-              placeholder="E-Mail"
-              type="email"
-            />
-            <Input
-              value={this.state.password}
-              onChange={this.onChange}
-              name="password"
-              placeholder="Password"
-              type="password"
-            />
-            <Input
-              value={this.state.confirmPassword}
-              onChange={this.onChange}
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              type="password"
-            />
-            <Button onClick={e => this.onSubmit(e, signup)}>
-              {loading ? 'Saving...' : 'Signup'}
-            </Button>
-          </form>
-        )}}
+            <div className="container">
+              <h1>Signup</h1>
+              <form onSubmit={e => this.onSubmit(e, signup)}>
+                <Input
+                  value={this.state.firstName}
+                  onChange={this.onChange}
+                  name="firstName"
+                  placeholder="First Name"
+                />
+                <Input
+                  value={this.state.lastName}
+                  onChange={this.onChange}
+                  name="lastName"
+                  placeholder="Last Name"
+                />
+                <Input
+                  value={this.state.username}
+                  onChange={this.onChange}
+                  name="username"
+                  placeholder="Username"
+                />
+                <Input
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  name="email"
+                  placeholder="E-Mail"
+                  type="email"
+                />
+                <Input
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                />
+                <Input
+                  value={this.state.confirmPassword}
+                  onChange={this.onChange}
+                  name="confirmPassword"
+                  placeholder="Confirm Password"
+                  type="password"
+                />
+                <Button
+                  onClick={loading ? noop : e => this.onSubmit(e, signup)}
+                >
+                  {loading ? 'Saving...' : 'Signup'}
+                </Button>
+              </form>
+            </div>
+          );
+        }}
       </Mutation>
     );
   }
