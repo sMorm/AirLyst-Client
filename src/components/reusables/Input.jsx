@@ -1,31 +1,39 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+import './styles/input.css';
 
-export default class Input extends Component {
-  static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    style: PropTypes.object,
-    name: PropTypes.string,
-    className: PropTypes.string,
-    type: PropTypes.string,
-    placeholder: PropTypes.string
-  };
+const Input = props => 
+  <input className={cx('Input',{
+    'Input--fullWidth': props.isFullWidth,
+    'Input--halfWidth': props.isHalfWidth,
+    'Input--oneFourthWidth': props.isOneFourthWidth,
+    'Input--gutter': props.hasGutter
+  })} {...props} onChange={e => props.onChange(e)}>
+    {props.children}
+  </input>
 
-  static defaultProps = {
-    style: {},
-    name: '',
-    className: '',
-    placeholder: '',
-    type: 'text'
-  };
+Input.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  style: PropTypes.object,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+  isFullWidth: PropTypes.bool,
+  isHalfWidth: PropTypes.bool,
+  isOneFourthWidth: PropTypes.bool,
+  hasGutter: PropTypes.bool
+};
 
-  render() {
-    return (
-      <div>
-        <input {...this.props} onChange={e => this.props.onChange(e)}>
-          {this.props.children}
-        </input>
-      </div>
-    );
-  }
-}
+Input.defaultProps = {
+  style: {},
+  name: '',
+  placeholder: '',
+  type: 'text',
+  isFullWidth: false,
+  isHalfWidth: false,
+  isOneFourthWidth: true,
+  hasGutter: true
+};
+
+export default Input;

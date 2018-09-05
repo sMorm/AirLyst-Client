@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import Form from '../reusables/Form';
 import Input from '../reusables/Input';
 import Button from '../reusables/Button';
 
@@ -58,7 +59,7 @@ export default class Signup extends Component {
           return (
             <div className="container">
               <h1>Signup</h1>
-              <form onSubmit={e => this.onSubmit(e, signup)}>
+              <Form onSubmit={e => this.onSubmit(e, signup)}>
                 <Input
                   value={this.state.firstName}
                   onChange={this.onChange}
@@ -103,7 +104,7 @@ export default class Signup extends Component {
                 >
                   {loading ? 'Saving...' : 'Signup'}
                 </Button>
-              </form>
+              </Form>
             </div>
           );
         }}

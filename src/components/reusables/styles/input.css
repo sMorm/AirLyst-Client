@@ -1,0 +1,22 @@
+.Input {
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.Input--oneFourthWidth {
+  width: calc(100% / 4);
+}
+
+.Input--halfWidth {
+  width: calc(100% / 2);
+}
+
+.Input--fullWidth {
+  width: 100%;
+}
+
+.Input--gutter {
+  margin: 8px;
+}
+
