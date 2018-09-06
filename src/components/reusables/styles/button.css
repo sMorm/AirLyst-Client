@@ -3,7 +3,8 @@ body {
   margin: 0;
   padding: 0;
   overflow: auto;
-  background: #FFF1EE; }
+  background: #FFF1EE;
+  box-sizing: border-box; }
 
 h1, p, input, button {
   font-family: 'Circular-Pro-Bold', sans-serif !important; }
@@ -24,11 +25,13 @@ a {
   width: 100%; }
 
 .Button-reusable {
-  background: navy;
+  background: #416788;
   color: white;
   border: none;
   font-size: 14px;
-  padding: 8px;
+  padding: 16px;
   border-radius: 5px; }
-  .Button-reusable-full {
+  .Button-reusable--full {
     width: 100%; }
+  .Button-reusable--gutter {
+    margin: 8px; }

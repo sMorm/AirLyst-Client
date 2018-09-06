@@ -1,0 +1,21 @@
+@import '../../../index.scss';
+
+.Form {
+  text-align: center;
+  &--gutter {
+    margin: 0 -8px;
+  }
+  &--mini {
+    width: 300px;
+    // added 8px to margin offset based on gutter
+    margin-left: calc(50% - 158px);
+  }
+  &--mini-noGutter {
+    width: 300px;
+    margin-left: calc(50% - 150px);
+  }
+  // style log in prompts
+  a {
+    color: $primary-color;
+  }
+}

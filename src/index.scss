@@ -1,5 +1,7 @@
 // temp
-$primary-color: navy;
+$primary-color: #416788;
+$primary-accent: #B5BAD0;
+$body-color--light-grey: lightgrey;
 
 body {
   font-family: 'Circular-Pro-Book', sans-serif;
@@ -7,6 +9,7 @@ body {
   padding: 0;
   overflow: auto;
   background: #FFF1EE;
+  box-sizing: border-box;
 }
 
 h1, p, input, button {

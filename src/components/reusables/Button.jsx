@@ -1,28 +1,31 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './styles/reusables.css';
+import cx from 'classnames';
+import './styles/button.css';
 
 export default class Button extends Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
-    fullWidth: PropTypes.bool,
+    isFullWidth: PropTypes.bool,
     name: PropTypes.string,
     type: PropTypes.string,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    isInGutter: PropTypes.bool
   };
 
   static defaultProps = {
-    fullWidth: false,
+    isFullWidth: false,
     name: null,
     className: '',
     placeholder: null,
-    type: null
+    type: null,
+    isInGutter: false
   };
 
-  getContainerClass = () => (this.props.fullWidth ? 'fullWidth' : '');
+  getContainerClass = () => (this.props.isFullWidth ? 'fullWidth' : '');
 
   getElementProps = () => {
-    const {fullWidth, className, ...allProps} = this.props;
+    const {isFullWidth, className, ...allProps} = this.props;
     return allProps;
   };
   render() {
@@ -30,11 +33,10 @@ export default class Button extends Component {
       <div className={this.getContainerClass()}>
         <button
           {...this.getElementProps()}
-          className={
-            this.props.fullWidth
-              ? 'Button-reusable Button-reusable-full'
-              : 'Button-reusable'
-          }
+          className={cx('Button-reusable',{
+            'Button-reusable--full': this.props.isFullWidth,
+            'Button-reusable--gutter': this.props.isInGutter,
+          })}
         >
           {this.props.children}
         </button>

@@ -1,0 +1,23 @@
+@import '../../../index.scss';
+
+.Input {
+  border-radius: 4px;
+  padding: 16px;
+  border: solid 1px $body-color--light-grey;
+  box-sizing: border-box;
+  &--oneFourthWidth {
+    width: calc(25% - 16px);
+  }
+  &--halfWidth {
+    width: calc(50% - 16px);
+  }
+  &--fullWidth {
+    width: 100%;
+  }
+  &--gutter {
+    margin: 8px;
+  }
+}
+
+
+

@@ -5,18 +5,22 @@ import './styles/form.css';
 
 const Form = props => 
   <form className={cx('Form',{
-    'Form--gutter': props.hasGutter
-  })} {...props} onChange={e => props.onChange(e)}>
+    'Form--gutter': props.hasGutter,
+    'Form--mini': props.isSmallVariation && props.hasGutter,
+    'Form--mini-noGutter': props.isSmallVariation && !props.hasGutter
+  })} {...props} onSubmit={props.onSubmit}>
     {props.children}
   </form>
 
 Form.propTypes = {
   onChange: PropTypes.func.isRequired,
-  hasGutter: PropTypes.bool
+  hasGutter: PropTypes.bool,
+  isSmallVariation: PropTypes.bool
 };
 
 Form.defaultProps = {
-  hasGutter: true
+  hasGutter: true,
+  isSmallVariation: false
 };
 
 export default Form;

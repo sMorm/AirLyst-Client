@@ -1,3 +1,38 @@
-.Form--gutter {
-  margin: 0 -8px;
-}
+body {
+  font-family: 'Circular-Pro-Book', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background: #FFF1EE;
+  box-sizing: border-box; }
+
+h1, p, input, button {
+  font-family: 'Circular-Pro-Bold', sans-serif !important; }
+
+a {
+  text-decoration: none !important;
+  color: black; }
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.hide {
+  display: none; }
+
+.fullWidth {
+  width: 100%; }
+
+.Form {
+  text-align: center; }
+  .Form--gutter {
+    margin: 0 -8px; }
+  .Form--mini {
+    width: 300px;
+    margin-left: calc(50% - 158px); }
+  .Form--mini-noGutter {
+    width: 300px;
+    margin-left: calc(50% - 150px); }
+  .Form a {
+    color: #416788; }

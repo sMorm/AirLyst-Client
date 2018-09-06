@@ -8,7 +8,8 @@ const Input = props =>
     'Input--fullWidth': props.isFullWidth,
     'Input--halfWidth': props.isHalfWidth,
     'Input--oneFourthWidth': props.isOneFourthWidth,
-    'Input--gutter': props.hasGutter
+    'Input--gutter': props.hasGutter,
+    'Input--flex': props.isFlex
   })} {...props} onChange={e => props.onChange(e)}>
     {props.children}
   </input>
@@ -22,7 +23,8 @@ Input.propTypes = {
   isFullWidth: PropTypes.bool,
   isHalfWidth: PropTypes.bool,
   isOneFourthWidth: PropTypes.bool,
-  hasGutter: PropTypes.bool
+  hasGutter: PropTypes.bool,
+  isFlex: PropTypes.bool
 };
 
 Input.defaultProps = {
@@ -33,7 +35,8 @@ Input.defaultProps = {
   isFullWidth: false,
   isHalfWidth: false,
   isOneFourthWidth: true,
-  hasGutter: true
+  hasGutter: true,
+  isFlex: true
 };
 
 export default Input;

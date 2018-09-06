@@ -5,9 +5,12 @@
   color: white;
   border: none;
   font-size: 14px;
-  padding: 8px;
+  padding: 16px;
   border-radius: 5px;
-  &-full {
+  &--full {
     width: 100%;
+  }
+  &--gutter {
+    margin: 8px;
   }
 }

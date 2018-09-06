@@ -1,22 +1,39 @@
+body {
+  font-family: 'Circular-Pro-Book', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background: #FFF1EE;
+  box-sizing: border-box; }
+
+h1, p, input, button {
+  font-family: 'Circular-Pro-Bold', sans-serif !important; }
+
+a {
+  text-decoration: none !important;
+  color: black; }
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.hide {
+  display: none; }
+
+.fullWidth {
+  width: 100%; }
+
 .Input {
   border-radius: 4px;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.Input--oneFourthWidth {
-  width: calc(100% / 4);
-}
-
-.Input--halfWidth {
-  width: calc(100% / 2);
-}
-
-.Input--fullWidth {
-  width: 100%;
-}
-
-.Input--gutter {
-  margin: 8px;
-}
-
+  padding: 16px;
+  border: solid 1px lightgrey;
+  box-sizing: border-box; }
+  .Input--oneFourthWidth {
+    width: calc(25% - 16px); }
+  .Input--halfWidth {
+    width: calc(50% - 16px); }
+  .Input--fullWidth {
+    width: 100%; }
+  .Input--gutter {
+    margin: 8px; }

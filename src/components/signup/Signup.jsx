@@ -8,6 +8,7 @@ import Button from '../reusables/Button';
 // Apollo & GraphQL
 import {Mutation} from 'react-apollo';
 import {SIGNUP_MUTATION} from './queries/signup';
+import { Link } from 'react-router-dom';
 
 const noop = () => {};
 
@@ -59,26 +60,31 @@ export default class Signup extends Component {
           return (
             <div className="container">
               <h1>Signup</h1>
-              <Form onSubmit={e => this.onSubmit(e, signup)}>
+              <hr />
+              <Form isSmallVariation onSubmit={e => this.onSubmit(e, signup)}>
                 <Input
+                  isFullWidth
                   value={this.state.firstName}
                   onChange={this.onChange}
                   name="firstName"
                   placeholder="First Name"
                 />
                 <Input
+                  isFullWidth
                   value={this.state.lastName}
                   onChange={this.onChange}
                   name="lastName"
                   placeholder="Last Name"
                 />
                 <Input
+                  isFullWidth
                   value={this.state.username}
                   onChange={this.onChange}
                   name="username"
                   placeholder="Username"
                 />
                 <Input
+                  isFullWidth
                   value={this.state.email}
                   onChange={this.onChange}
                   name="email"
@@ -86,6 +92,7 @@ export default class Signup extends Component {
                   type="email"
                 />
                 <Input
+                  isFullWidth
                   value={this.state.password}
                   onChange={this.onChange}
                   name="password"
@@ -93,6 +100,7 @@ export default class Signup extends Component {
                   type="password"
                 />
                 <Input
+                  isFullWidth
                   value={this.state.confirmPassword}
                   onChange={this.onChange}
                   name="confirmPassword"
@@ -100,10 +108,13 @@ export default class Signup extends Component {
                   type="password"
                 />
                 <Button
+                  isInGutter
+                  isFullWidth
                   onClick={loading ? noop : e => this.onSubmit(e, signup)}
                 >
                   {loading ? 'Saving...' : 'Signup'}
                 </Button>
+                Already have an account? <Link to="/login">Log in.</Link>
               </Form>
             </div>
           );

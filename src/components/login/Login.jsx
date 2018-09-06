@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Mutation} from 'react-apollo';
 import {Redirect} from 'react-router-dom';
+import Form from '../reusables/Form';
 import Input from '../reusables/Input';
 import Button from '../reusables/Button';
 import {LOGIN_MUTATION} from './queries/login';
@@ -37,27 +38,31 @@ export default class Login extends Component {
           }
           return (
             <div className="Login container">
-              <form 
+              <h1>Login</h1>
+              <hr />
+              <Form 
+                isSmallVariation
                 onSubmit={e => this.onSubmit(e, login)}
-                className="Login-form"
-                >
+              >
                 <Input
+                  isFullWidth
                   name="username"
                   onChange={this.onChange}
                   value={this.state.username}
                   placeholder="Username"
                 />
                 <Input
+                  isFullWidth
                   name="password"
                   onChange={this.onChange}
                   value={this.state.password}
                   placeholder="Password"
                   type="password"
                 />
-                <Button onClick={e => this.onSubmit(e, login)} fullWidth>
+                <Button onClick={e => this.onSubmit(e, login)} isInGutter isFullWidth>
                   {loading ? 'saving' : 'Login'}
                 </Button>
-              </form>
+              </Form>
             </div>
           );
         }}
